@@ -7,9 +7,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Linear Algebra: Vectors, Span, and Basis &#8212; Fundamentals</title>
+    <title>&lt;no title&gt; &#8212; nabin&#39;s notebook</title>
   
   
   
@@ -62,11 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Vector, Span, Basis';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Linear Algebra: Matrix-Vector Multiplication and Transformations" href="Transformations.html" />
-    <link rel="prev" title="Linear Algebra and Vectors" href="Vectors.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -153,8 +151,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Fundamentals - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Fundamentals - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="nabin's notebook - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="nabin's notebook - Home"/>`);</script>
   
   
 </a></div>
@@ -164,21 +162,18 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Nabin Oli (outlier.py)
+                    Welcome to my blogs
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Vectors.html">Linear Algebra and Vectors</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01Numpy_intro.html">1. What are Data Structures?</a></li>
 
 
 
 
 
 
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Linear Algebra: Vectors, Span, and Basis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Transformations.html">Linear Algebra: Matrix-Vector Multiplication and Transformations</a></li>
 </ul>
 
     </div>
@@ -250,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FVector, Span, Basis.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -280,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/Vector, Span, Basis.ipynb" target="_blank"
+      <li><a href="_sources/notebooks.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -364,7 +359,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Linear Algebra: Vectors, Span, and Basis</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -373,16 +368,9 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-from-previous-video">Recap from Previous Video</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-about-vector-coordinates">Thinking about Vector Coordinates</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basis-vectors">Basis Vectors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combinations-and-span">Linear Combinations and Span</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-in-3d-space">Span in 3D Space</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basis-of-a-space">Basis of a Space</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
+
             </nav>
         </div>
     </div>
@@ -393,75 +381,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p><b><h1 align='center'>Linear Algebra: Vectors, Span, and Basis</h1></b></p>
-<section class="tex2jax_ignore mathjax_ignore" id="linear-algebra-vectors-span-and-basis">
-<h1>Linear Algebra: Vectors, Span, and Basis<a class="headerlink" href="#linear-algebra-vectors-span-and-basis" title="Permalink to this heading">#</a></h1>
-<section id="recap-from-previous-video">
-<h2>Recap from Previous Video<a class="headerlink" href="#recap-from-previous-video" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Described vector addition, scalar multiplication, and vector coordinates.</p></li>
-<li><p>Emphasized the back-and-forth relationship between pairs of numbers and vectors.</p></li>
-<li><p>Explored the xy-coordinate system.</p></li>
-</ul>
-</section>
-<section id="thinking-about-vector-coordinates">
-<h2>Thinking about Vector Coordinates<a class="headerlink" href="#thinking-about-vector-coordinates" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Each coordinate as a scalar that stretches or squishes vectors.</p></li>
-<li><p>Special vectors in the xy-coordinate system: i-hat (unit vector in x-direction) and j-hat (unit vector in y-direction).</p></li>
-<li><p>Framing coordinates as scalars that scale basis vectors.</p></li>
-</ul>
-</section>
-<section id="basis-vectors">
-<h2>Basis Vectors<a class="headerlink" href="#basis-vectors" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Basis vectors: i-hat and j-hat in standard coordinate systems.</p></li>
-<li><p>Any pair of linearly independent vectors can form a basis for a coordinate system.</p></li>
-<li><p>Choices of basis vectors lead to different coordinate systems.</p></li>
-</ul>
-</section>
-<section id="linear-combinations-and-span">
-<h2>Linear Combinations and Span<a class="headerlink" href="#linear-combinations-and-span" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Linear combination: Adding together scaled vectors.</p></li>
-<li><p>Linear combinations of i-hat and j-hat result in a span covering all 2D space.</p></li>
-<li><p>Span of vectors: Set of all possible vectors achievable through linear combinations.</p></li>
-<li><p>The concept of span becomes more interesting in three-dimensional space.</p></li>
-</ul>
-</section>
-<section id="span-in-3d-space">
-<h2>Span in 3D Space<a class="headerlink" href="#span-in-3d-space" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Span of two vectors in 3D space: Forms a flat sheet.</p></li>
-<li><p>Adding a third vector: Can either sit on the span or unlock access to all 3D space.</p></li>
-<li><p>Linearly dependent vectors: One is redundant, and removing it doesn’t reduce the span.</p></li>
-<li><p>Linearly independent vectors: Each adds a new dimension to the span.</p></li>
-</ul>
-</section>
-<section id="basis-of-a-space">
-<h2>Basis of a Space<a class="headerlink" href="#basis-of-a-space" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Technical definition: A basis is a set of linearly independent vectors that span a space.</p></li>
-<li><p>Puzzle: Why does this definition make sense? Think about the relationships between span and linear independence.</p></li>
-</ul>
-</section>
-<section id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>In the next video, explore matrices and transforming space.</p></li>
-<li><p>Matrices play a crucial role in linear algebra, connecting concepts and operations.</p></li>
-</ul>
-</section>
-<section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Linear algebra involves fundamental operations: vector addition and scalar multiplication.</p></li>
-<li><p>Basis vectors and span provide insight into coordinate systems and vector spaces.</p></li>
-<li><p>Understanding linear dependence and independence is crucial in defining a basis.</p></li>
-<li><p>Matrices will be explored in the next video, contributing to the transformation of space. See you in the next lesson!</p></li>
-</ul>
-</section>
-</section>
+  <h1 align='center'>This is Chapter 3</h1><p>Hello Everyone</p>
 
     <script type="text/x-thebe-config">
     {
@@ -493,24 +413,6 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Vectors.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Linear Algebra and Vectors</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Transformations.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linear Algebra: Matrix-Vector Multiplication and Transformations</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -525,16 +427,9 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-from-previous-video">Recap from Previous Video</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-about-vector-coordinates">Thinking about Vector Coordinates</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basis-vectors">Basis Vectors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combinations-and-span">Linear Combinations and Span</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-in-3d-space">Span in 3D Space</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basis-of-a-space">Basis of a Space</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+    <ul class="simple visible nav section-nav flex-column">
 </ul>
+
   </nav></div>
 
 </div></div>
@@ -548,7 +443,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Nabin Oli (outlier.py)
+By Nabin Oli (An outlier)
 </p>
 
   </div>

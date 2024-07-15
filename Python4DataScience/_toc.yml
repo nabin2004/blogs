@@ -5,3 +5,6 @@ format: jb-book
 root: intro
 chapters:
 - file: 01_introduction.ipynb
+- file: python.ipynb
+- file: linearAlgebra.ipynb
+
